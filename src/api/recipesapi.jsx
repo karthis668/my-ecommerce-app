@@ -6,3 +6,8 @@ export const getRecipesList = ()=>{
 }
 
  
+export const getRecepieDetails = (id)=>{
+    return (
+        Axios.get(`https://dummyjson.com/recipes/${id}`)
+    )
+}
