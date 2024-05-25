@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
-import RecipesList from "../api/recipesapi";
-import Loader from "../components/loader/loader";
+import {getRecipesList} from "../api/recipesapi";
+import Loader from "../components/navbar/loader/loader";
 import Rating from "../components/rating/rating";
 import CarouselBanner from "./carouselBanner";
 import { Link } from "react-router-dom";
+
 function Home() {
   const [recipesList, setRecpesList] = useState([]);
   const [loading, setLoading] = useState(false);
   // const [menu, setMenu] = useState('Home')
 
+  const getListOfReciepies = async()=>{
+    getRecipesList()
+    .then((res) => {
+      // console.log(res.data);
+      setRecpesList(res.data.recipes);
+      setLoading(false);
+    })
+    .catch((err) => console.log(err));
+  console.log(recipesList);
+  }
   useEffect(() => {
     setLoading(true);
-    RecipesList()
-      .then((res) => {
-        // console.log(res.data);
-        setRecpesList(res.data.recipes);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-    console.log(recipesList);
+    getListOfReciepies()
   }, []);
 
   return (
@@ -34,7 +38,7 @@ function Home() {
                 <img src={recp.image} className="card-img-top" alt={recp.name}></img>
                 <div className="card-body">
                   <h5 className="card-title">
-                    <Link to="/recipes/${recp.id}">{recp.name}</Link>
+                    <Link to={"/recipes/"+`${recp.id}`}>{recp.name}</Link>
                   </h5>
                   <p className="card-text">{recp.instructions}</p>
                   <div className="d-flex justify-content-between align-items-center">

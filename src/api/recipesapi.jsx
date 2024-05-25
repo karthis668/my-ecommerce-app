@@ -1,14 +1,8 @@
 import Axios from "axios";
-const RecipesList = ()=>{
+export const getRecipesList = ()=>{
     return (
         Axios.get('https://dummyjson.com/recipes')
     )
 }
 
-export default RecipesList
-
-// const Recipesdetails = (id)=>{
-//     return (
-//         Axios.get('https://dummyjson.com/recipes/'+ id)
-//     )
-// }
+ 
