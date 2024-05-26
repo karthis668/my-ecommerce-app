@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {getRecipesList} from "../api/recipesapi";
-import Loader from "../components/navbar/loader/loader";
+import Loader from "../components/loader/loader";
 import Rating from "../components/rating/rating";
 import CarouselBanner from "./carouselBanner";
 import { Link } from "react-router-dom";
@@ -32,13 +32,14 @@ function Home() {
         {loading ? (
           <Loader />
         ) : (
-          recipesList.map((recp) => (
+          recipesList.map((recp,index) => (
             <div className="col-6 col-md-3 p-3 my-2" key={recp.id}>
               <div className="card">
                 <img src={recp.image} className="card-img-top" alt={recp.name}></img>
                 <div className="card-body">
-                  <h5 className="card-title">
+                  <h5 className="card-title d-flex justify-content-between">
                     <Link to={"/recipes/"+`${recp.id}`}>{recp.name}</Link>
+                    <span>${index + 3}.00</span>
                   </h5>
                   <p className="card-text">{recp.instructions}</p>
                   <div className="d-flex justify-content-between align-items-center">
