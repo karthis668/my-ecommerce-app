@@ -1,24 +1,31 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/cart";
 
 const NavBar = () => {
   const [menu, setMenu] = useState("Home");
+  const {cartCount} = useContext(CartContext);
+  const cart = cartCount();
+ 
   return (
     <nav
       className="navbar bg-dark border-bottom border-body navbar-expand-lg sticky-top"
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Food{" "}
+        {/* <a className="navbar-brand" href="/">
+          
+        </a> */}
+        <Link className="navbar-brand" to="/">
+        Food{" "}
           <img
             src="/src/assets/tasty.png"
             alt="logo"
             width="20px"
             height="20px"
           />{" "}
-          Food
-        </a>
+          Food</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -44,8 +51,10 @@ const NavBar = () => {
             </li>
           </ul>
           <div>
+          <Link to={"/cart"} >
           <i className="bi bi-bag me-5"></i>
-          <span className="badge text-bg-primary rounded-pill">0</span>
+          <span className="badge text-bg-primary rounded-pill">{cart}</span>
+          </Link>
           </div>
         </div>
       </div>

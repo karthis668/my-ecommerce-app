@@ -70,3 +70,22 @@ span.badge.text-bg-primary.rounded-pill {
     right: 44px;
     top: 30%;
 }
+
+.row.my-3.cart-list {
+    border-radius: 6px;
+    border: 1px solid #dfd7d7;
+    padding: 13px;
+}
+
+input#productCount {
+    width: 40px;
+}
+
+.ccount { 
+    top: 4px;
+}
+
+.empty-cart {
+    height: 30vh;
+    align-items: center;
+}
