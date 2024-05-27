@@ -41,7 +41,7 @@ function Home() {
           <Loader />
         ) : (
           recipesList.map((recp, index) => (
-            <div className="col-6 col-md-3 p-3 my-2" key={recp.id}>
+            <div className="col-6 col-md-4  col-lg-3 col-sm-6 p-3 my-2" key={recp.id}>
               <div className="card">
                 <img
                   src={recp.image}
@@ -61,8 +61,7 @@ function Home() {
                     <button
                       onClick={() => addCart(recp)}
                       type="button"
-                      className="btn btn-primary"  id="liveToastBtn"
-                    >
+                      className="btn btn-primary"  id="liveToastBtn">
                       Add to Cart
                     </button>
                   </div>

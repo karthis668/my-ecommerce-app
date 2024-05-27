@@ -39,7 +39,7 @@ const CartItems = () => {
                     </div>
                     <div className="col-8">
                       <h5>
-                        {cart?.name} ({cart?.cuisine})
+                        <Link to={"/recipes/" + `${cart.id}`}>{cart?.name} ({cart?.cuisine})</Link>
                       </h5>
                       <h6>preparation Time : {cart?.prepTimeMinutes} Minutes</h6>
                       {/* <h6>
@@ -73,25 +73,27 @@ const CartItems = () => {
                       <h6>20-25 mins</h6>
                     </div>
                   </div>
+                <hr/>
                 </div>
               </div>
             ))}
             <div className="col-8">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Total</h5>
+                  <h5 className="card-title">Total Cost</h5>
                   <div>
-                    <h6 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-space-between">
+                    <h6 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-between">
                       <span>Price ({cart} items)</span><span>$500.00</span>
                     </h6>
                   </div>
                   <div>
-                    <h6 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-space-between">
+                    <h6 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-between">
                       <span> Delivery charge </span>
                       <span> Free</span>
                     </h6>
                   </div>
-                  <h5 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-space-between">
+                  <hr />
+                  <h5 className="card-title mb-2 text-body-secondary d-flex justify-content-between">
                     <span> Total </span>
                     <span> $500.00</span>
                   </h5>

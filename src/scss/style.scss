@@ -82,10 +82,14 @@ input#productCount {
 }
 
 .ccount { 
-    top: 4px;
+    top: 6px;
 }
 
 .empty-cart {
     height: 30vh;
     align-items: center;
+}
+
+img.product-detail-img{
+    object-fit: contain;
 }
