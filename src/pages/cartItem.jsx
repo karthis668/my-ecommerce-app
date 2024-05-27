@@ -35,6 +35,7 @@ const CartItems = () => {
                         alt="image"
                         height="150px"
                         width="150px"
+                        className="cart-items-img"
                       />
                     </div>
                     <div className="col-8">
@@ -83,7 +84,7 @@ const CartItems = () => {
                   <h5 className="card-title">Total Cost</h5>
                   <div>
                     <h6 className="card-subtitle mb-2 text-body-secondary d-flex justify-content-between">
-                      <span>Price ({cart} items)</span><span>$500.00</span>
+                      <span>Price ({cart} items)</span><span>₹{getCartTotal()}.00</span>
                     </h6>
                   </div>
                   <div>
@@ -94,8 +95,8 @@ const CartItems = () => {
                   </div>
                   <hr />
                   <h5 className="card-title mb-2 text-body-secondary d-flex justify-content-between">
-                    <span> Total </span>
-                    <span> $500.00</span>
+                    <span> To Pay </span>
+                    <span>₹{getCartTotal()}.00</span>
                   </h5>
                 </div>
               </div>

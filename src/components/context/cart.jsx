@@ -76,8 +76,10 @@ console.log("after subtracting the cart Items:", cartItems )
     }
 
     const getCartTotal = () => {
-        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+        return cartItems.reduce((total, item) => total + item.caloriesPerServing * item.quantity, 0);
     };
+
+    console.log(getCartTotal())
 
 
 

@@ -40,9 +40,9 @@ function Home() {
         {loading ? (
           <Loader />
         ) : (
-          recipesList.map((recp, index) => (
+          recipesList.map((recp) => (
             <div className="col-6 col-md-4  col-lg-3 col-sm-6 p-3 my-2" key={recp.id}>
-              <div className="card">
+              <div className="card homepg-card">
                 <img
                   src={recp.image}
                   className="card-img-top"
@@ -51,12 +51,12 @@ function Home() {
                 <div className="card-body">
                   <h5 className="card-title d-flex justify-content-between">
                     <Link to={"/recipes/" + `${recp.id}`}>{recp.name}</Link>
-                    <span>${index + 3}.00</span>
+                    <span className="rupees">₹{recp.caloriesPerServing}.00</span>
                   </h5>
                   <p className="card-text">{recp.instructions}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <span>
-                      Rating : <Rating value={recp.rating} />
+                      Rating : <Rating className="rating" value={recp.rating} />
                     </span>
                     <button
                       onClick={() => addCart(recp)}

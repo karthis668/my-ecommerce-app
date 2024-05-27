@@ -66,7 +66,7 @@ function RecipeDetails() {
                 <span>
                   Rating : <Rating value={data.rating} />
                 </span>
-                <h5>${data.id + 3}.00</h5>
+                <h5>₹{data.caloriesPerServing}.00</h5>
               </div>
               <h6>Ingredients</h6>
               <ul>

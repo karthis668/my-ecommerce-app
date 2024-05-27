@@ -45,7 +45,7 @@ p.card-text {
 }
 
 nav.navbar.bg-dark.navbar-expand-lg {
-    height: 12vh !important;
+    height: 10vh !important;
 }
 
 ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
@@ -92,4 +92,20 @@ input#productCount {
 
 img.product-detail-img{
     object-fit: contain;
+}
+
+.card.homepg-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 25px 0 rgba(0,0,0,.3), 0 0 1px 0 rgba(0,0,0,.25);
+    cursor: pointer;
+}
+
+
+.cart-items-img{
+    border-radius: 10px;
+}
+
+.rupees{
+    content: "\20B9";
+    margin-left: 2px;
 }
