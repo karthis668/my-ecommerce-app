@@ -49,16 +49,16 @@ function RecipeDetails() {
       ) : (
         <div>
           <div className="row p-3">
-            <div className="col-5">
+            <div className="col md-col-5 lg-col-5 sm-col-12">
               <img className="product-detail-img" src={data?.image} width="600px" height="500px" />
               
             </div>
-            <div className="col-6">
+            <div className="col sm-col-12 md-col-7 lg-col-7">
               <div className="d-flex justify-content-between align-items-center">
               <h3>
                 {data?.name} ({data?.cuisine})
               </h3>
-              <button onClick={()=>addCart(data)} type="button" className="btn btn-primary">
+              <button onClick={()=>addCart(data)} type="button" className="btn btn-primary btn-sm">
                 Add  to Cart
               </button>
               </div>

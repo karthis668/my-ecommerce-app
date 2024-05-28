@@ -38,20 +38,20 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li className="nav-item" onClick={() => setMenu("Home")}>
+          <ul className="navbar-nav me-auto">
+            <li className="nav-item ms-3" onClick={() => setMenu("Home")}>
               <span className={`nav-link ${menu == "Home" ? "active" : ""}`}>
                 <Link to="/">Home</Link>
               </span>
             </li>
-            <li className="nav-item ms-4" onClick={() => setMenu("Recipes")}>
+            <li className="nav-item ms-3" onClick={() => setMenu("Recipes")}>
               <span className={`nav-link ${menu == "Recipes" ? "active" : ""}`}>
                 <Link to="recipes">Menu</Link>
               </span>
             </li>
           </ul>
           <div>
-          <Link to={"/cart"} >
+          <Link to={"/cart"} className="">
           <i className="bi bi-bag me-5"></i>
           <span className="badge text-bg-primary rounded-pill">{cart}</span>
           </Link>

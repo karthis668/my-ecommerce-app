@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { getRecipesList } from "../api/recipesapi";
 import Loader from "../components/loader/loader";
-import Rating from "../components/rating/rating";
 import CarouselBanner from "./carouselBanner";
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/context/cart";
@@ -56,12 +55,12 @@ function Home() {
                   <p className="card-text">{recp.instructions}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <span>
-                      Rating : <Rating className="rating" value={recp.rating} />
+                      Rating :  <i className="bi bi-star-fill" style={{color:'green'}}></i> {recp.rating}
                     </span>
                     <button
                       onClick={() => addCart(recp)}
                       type="button"
-                      className="btn btn-primary"  id="liveToastBtn">
+                      className="btn btn-primary btn-sm"  id="liveToastBtn">
                       Add to Cart
                     </button>
                   </div>
