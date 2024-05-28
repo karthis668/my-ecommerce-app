@@ -27,9 +27,9 @@ const CartItems = () => {
           <div className="col-12">
             {cartItems.map((cart, index) => (
               <div className="row" key={index}>
-                <div className="col-8">
+                <div className="col-12">
                   <div className="row my-1 cart-list">
-                    <div className="col-2 d-flex align-items-center">
+                    <div className="col lg-col-2 md-col-2 sm-col-2">
                       <img
                         src={cart?.image}
                         alt="image"
@@ -38,7 +38,7 @@ const CartItems = () => {
                         className="cart-items-img"
                       />
                     </div>
-                    <div className="col-8">
+                    <div className="col lg-col-8 md-col-10 sm-col-10">
                       <h5>
                         <Link to={"/recipes/" + `${cart.id}`}>{cart?.name} ({cart?.cuisine})</Link>
                       </h5>
@@ -69,7 +69,7 @@ const CartItems = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="col-1">
+                    <div className="col lg-col-2 md-col-2 sm-col-2">
                       <p>Standard Delivery</p>
                       <h6>20-25 mins</h6>
                     </div>
@@ -78,7 +78,7 @@ const CartItems = () => {
                 </div>
               </div>
             ))}
-            <div className="col-8">
+            <div className="lg-col-8 md-col-8 sm-col-8">
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">Total Cost</h5>
@@ -101,6 +101,7 @@ const CartItems = () => {
                 </div>
               </div>
             </div>
+            <div className="lg-col-4 md-col-2 sm-col-1 offset-md-4"></div>
           </div>
         </div>
       </>
