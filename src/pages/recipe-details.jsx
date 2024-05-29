@@ -4,6 +4,8 @@ import Loader from "../components/loader/loader";
 import RecipesdetailsApi from "../api/recipeDetailsApi";
 import Rating from "../components/rating/rating";
 import { CartContext } from "../components/context/cart";
+import { ToastContainer } from 'react-toastify';
+
 
 function RecipeDetails() {
   const [data, setData] = useState({});
@@ -82,6 +84,7 @@ function RecipeDetails() {
               </ul>
             </div>
           </div>
+          <ToastContainer/>
         </div>
       )}
     </>

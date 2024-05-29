@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { createContext, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const CartContext = createContext([]);
@@ -26,8 +28,10 @@ export const CartProvider = ({children})=>{
        else{
         setCartItems([...cartItems,{...item,quantity : 1}]);
        }
+       toaster(`You've added '${item.name}' to the cart!`,"added");
 
     }
+    
 
     // TO remove cart Item from Cart
 const removeCart = (item) => {
@@ -41,17 +45,18 @@ const removeCart = (item) => {
           : cartItem;
       });
     });
+    toaster(`You've changed '${item.name}' QUANTITY to '${item.quantity - 1}'`,"removed");
   }
-  else {
+  else{
     setCartItems((prevCartitems) => {
         return prevCartitems.filter((cartItem) => {
           return cartItem.id !== item.id
         });
       });
+      toaster(`You've removed '${item.name}' from the cart'`,"removed");
   }
+ 
 };
-
-console.log("after subtracting the cart Items:", cartItems )
 
     // To clear cart
     const clearCart = () => {
@@ -79,9 +84,32 @@ console.log("after subtracting the cart Items:", cartItems )
         return cartItems.reduce((total, item) => total + item.caloriesPerServing * item.quantity, 0);
     };
 
-    console.log(getCartTotal())
+    // Toaster
 
-
+    const toaster = (msg,action)=>{
+        if(action == "added"){
+            toast(msg, {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                });
+        }
+        else if(action == "removed") {
+            toast(msg, {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                });
+        }
+    }
 
 
     return (

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/context/cart";
 import { useContext } from "react";
+import { ToastContainer } from 'react-toastify';
+
 
 const CartItems = () => {
     const {cartItems,addCart,removeCart, cartCount,getCartTotal } = useContext(CartContext);
@@ -76,6 +78,7 @@ const CartItems = () => {
                   </div>
                 <hr/>
                 </div>
+                
               </div>
             ))}
             <div className="lg-col-8 md-col-8 sm-col-8">
@@ -103,11 +106,17 @@ const CartItems = () => {
             </div>
             <div className="lg-col-4 md-col-2 sm-col-1 offset-md-4"></div>
           </div>
+          <ToastContainer/>
         </div>
       </>
     );
   }else{
-    return(<h4 className="empty-cart text-align-center d-flex justify-content-center">Your cart is empty! </h4>)
+    return(
+      <>
+      <h4 className="empty-cart text-align-center d-flex justify-content-center">Your cart is empty! </h4>
+      <Link to="/" className="text-align-center d-flex justify-content-center" style={{textDecoration:'none'}}><button className="btn btn-sm btn-success ">Order now</button></Link>
+      </>
+    )
   }
 };
 

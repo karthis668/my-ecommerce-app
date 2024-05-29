@@ -4,6 +4,7 @@ import Loader from "../components/loader/loader";
 import CarouselBanner from "./carouselBanner";
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/context/cart";
+import { ToastContainer } from 'react-toastify';
 
 function Home() {
   const [recipesList, setRecpesList] = useState([]);
@@ -65,10 +66,11 @@ function Home() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
           ))
         )}
+        <ToastContainer />
       </div>
       
     </>
