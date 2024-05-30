@@ -5,8 +5,8 @@
 p.card-text {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 21;
     -webkit-box-orient: vertical;
 }
 
@@ -14,7 +14,7 @@ h5.card-title.d-flex.justify-content-between a {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    line-clamp: 2;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 

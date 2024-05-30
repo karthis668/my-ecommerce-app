@@ -14,21 +14,19 @@ function Home() {
   // eslint-disable-next-line no-unused-vars
   const { cartItems, addCart } = useContext(CartContext);
 
-  const getListOfReciepies = async () => {
+  const getListOfReciepies = () => {
     getRecipesList()
       .then((res) => {
         let recipeList = res.data.recipes.map((recp) => {
           return { ...recp, quantity: 0 };
         });
         setRecpesList(recipeList);
-        // console.log(recipeList);
         setLoading(false);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    console.log(cartItems);
     setLoading(true);
     getListOfReciepies();
   }, []);

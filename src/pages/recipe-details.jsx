@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../components/loader/loader";
-import RecipesdetailsApi from "../api/recipeDetailsApi";
 import Rating from "../components/rating/rating";
 import { CartContext } from "../components/context/cart";
 import { ToastContainer } from 'react-toastify';
+import { getRecepieDetails } from '../api/recipesapi'
 
 
 function RecipeDetails() {
@@ -13,9 +13,9 @@ function RecipeDetails() {
   const {id} = useParams();
   const {addCart} = useContext(CartContext);
 
-  const getRecipesDetails = async()=>{
+  const getRecipesDetail = async()=>{
     setLoading(true);
-   await RecipesdetailsApi(id)
+   await getRecepieDetails(id)
       .then((res) => {
         let dataVal = res.data;
         console.log("api response data", dataVal);
@@ -26,7 +26,7 @@ function RecipeDetails() {
   }
 
   useEffect(() => {
-    getRecipesDetails();
+    getRecipesDetail();
   }, []);
 
   // console.log(data);
