@@ -62,7 +62,7 @@ function Menu() {
         <div className="col-md-3 col-lg-3 col-sm-6 p-3">
         <ul className="list-group overflow-auto" style={{height:"100vh"}}>
           {recipeTagList.map((recipeName,index) => (
-          <li className={`list-group-item ${menu == recipeName ? "active" : ""}`} key={index} onClick={()=>recipeByTagName(recipeName)}>{recipeName}</li>
+          <li role="button" className={`list-group-item cursor-pointer ${menu == recipeName ? "active" : ""}`} key={index} onClick={()=>recipeByTagName(recipeName)}>{recipeName}</li>
         ))}
         </ul>
         </div>
