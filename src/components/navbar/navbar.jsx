@@ -2,6 +2,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cart";
+import logo from '../../assets/tasty.png';
+
 
 const NavBar = () => {
   const [menu, setMenu] = useState("Home");
@@ -20,7 +22,7 @@ const NavBar = () => {
         <Link className="navbar-brand" to="/">
         Food{" "}
           <img
-            src="./src/assets/tasty.png"
+            src={logo}
             alt="logo"
             width="20px"
             height="20px"
