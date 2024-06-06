@@ -20,7 +20,7 @@ const NavBar = () => {
         <Link className="navbar-brand" to="/">
         Food{" "}
           <img
-            src="/src/assets/tasty.png"
+            src="./src/assets/tasty.png"
             alt="logo"
             width="20px"
             height="20px"
