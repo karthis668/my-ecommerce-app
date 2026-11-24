@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 
 
 const CartItems = () => {
-    const {cartItems,addCart,removeCart, cartCount,getCartTotal } = useContext(CartContext);
+    const {cartItems,addCart,removeCart,clearCart, cartCount,getCartTotal } = useContext(CartContext);
     const cart = cartCount();
 // useEffect(()=>{
 //     console.log(cartItems)
@@ -68,6 +68,13 @@ const CartItems = () => {
                           className="btn outline-secondar"
                         >
                           <i className="bi bi-dash"></i>
+                        </button>
+                        <button
+                          onClick={() => clearCart(cart, true)}
+                          type="button"
+                          className="btn outline-secondar"
+                        >
+                          <i className="bi bi-trash"></i>
                         </button>
                       </div>
                     </div>

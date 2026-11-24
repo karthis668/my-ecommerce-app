@@ -59,8 +59,13 @@ const removeCart = (item) => {
 };
 
     // To clear cart
-    const clearCart = () => {
-        setCartItems([]);
+    const clearCart = (item) => {
+        setCartItems((prevCartitems) => {
+        return prevCartitems.filter((cartItem) => {
+          return cartItem.id !== item.id
+        });
+      });
+      toaster(`You've removed '${item.name}' from the cart'`,"removed");
     };
 
     useEffect( ()=>{

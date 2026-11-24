@@ -13,21 +13,21 @@ function RecipeDetails() {
   const {id} = useParams();
   const {addCart} = useContext(CartContext);
 
-  const getRecipesDetail = async()=>{
-    setLoading(true);
-   await getRecepieDetails(id)
-      .then((res) => {
-        let dataVal = res.data;
-        console.log("api response data", dataVal);
-        setData(dataVal);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }
-
   useEffect(() => {
+    const getRecipesDetail = async () => {
+      setLoading(true);
+      try {
+        const res = await getRecepieDetails(id);
+        setData(res.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     getRecipesDetail();
-  }, []);
+  }, [id]);
 
   // console.log(data);
 
